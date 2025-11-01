@@ -45,13 +45,13 @@
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Club Deportivo";
             // 
-            // btnRegistroCliente
+            // btnRegistarCliente
             // 
             btnRegistarCliente.BackColor = Color.White;
             btnRegistarCliente.FlatStyle = FlatStyle.Flat;
             btnRegistarCliente.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnRegistarCliente.Location = new Point(150, 107);
-            btnRegistarCliente.Name = "btnRegistroCliente";
+            btnRegistarCliente.Name = "btnRegistarCliente";
             btnRegistarCliente.Size = new Size(200, 43);
             btnRegistarCliente.TabIndex = 2;
             btnRegistarCliente.Text = "Registrar Cliente";
@@ -79,7 +79,7 @@
             btnListaMorosos.Location = new Point(150, 299);
             btnListaMorosos.Name = "btnListaMorosos";
             btnListaMorosos.Size = new Size(200, 43);
-            btnListaMorosos.TabIndex = 4;
+            btnListaMorosos.TabIndex = 5;
             btnListaMorosos.Text = "Listado de Morosos";
             btnListaMorosos.UseVisualStyleBackColor = false;
             btnListaMorosos.Click += btnListaMorosos_Click;
@@ -91,7 +91,7 @@
             btnPagoActividad.Location = new Point(150, 233);
             btnPagoActividad.Name = "btnPagoActividad";
             btnPagoActividad.Size = new Size(200, 43);
-            btnPagoActividad.TabIndex = 5;
+            btnPagoActividad.TabIndex = 4;
             btnPagoActividad.Text = "Pago de Actividad";
             btnPagoActividad.UseVisualStyleBackColor = false;
             btnPagoActividad.Click += btnPagoActividad_Click;

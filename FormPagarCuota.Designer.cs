@@ -352,6 +352,7 @@
             Controls.Add(lblPagarCuota);
             Margin = new Padding(2);
             Name = "FormPagarCuota";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagar Cuota";
             Load += FormPagarCuota_Load;
             gbMetodoPago.ResumeLayout(false);

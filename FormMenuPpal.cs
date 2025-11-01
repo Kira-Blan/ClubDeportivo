@@ -40,7 +40,8 @@ namespace clubDeportivo
 
         private void btnListaMorosos_Click(object sender, EventArgs e)
         {
-
+            FormMorosos formMorosos = new FormMorosos();
+            formMorosos.ShowDialog();
         }
               
     }

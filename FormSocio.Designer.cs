@@ -45,7 +45,7 @@
             // 
             // btnGenerarCarnet
             // 
-            btnGenerarCarnet.BackColor = Color.LightBlue;
+            btnGenerarCarnet.BackColor = Color.SkyBlue;
             btnGenerarCarnet.FlatStyle = FlatStyle.Flat;
             btnGenerarCarnet.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerarCarnet.Location = new Point(174, 203);
@@ -58,7 +58,7 @@
             // 
             // btnPagarCuota
             // 
-            btnPagarCuota.BackColor = Color.PowderBlue;
+            btnPagarCuota.BackColor = Color.LightSkyBlue;
             btnPagarCuota.FlatStyle = FlatStyle.Flat;
             btnPagarCuota.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPagarCuota.Location = new Point(526, 203);

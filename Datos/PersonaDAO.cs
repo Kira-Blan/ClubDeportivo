@@ -227,7 +227,60 @@ namespace clubDeportivo.Datos
                 if (sqlCon != null && sqlCon.State == System.Data.ConnectionState.Open)
                     sqlCon.Close();
             }
-        }        
+        }
+
+        // Método para obtener socios con cuota vencida hoy
+        public List<Persona> ObtenerSociosConCuotaVencidaHoy()
+        {
+            List<Persona> sociosMorosos = new List<Persona>();
+            MySqlConnection? sqlCon = null;
+            MySqlDataReader? reader = null;
+
+            try
+            {
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                sqlCon.Open();
+
+                string query = @"SELECT Nombre, Apellido, Documento, Telefono, 
+                        FechaNacimiento, AptoFisico 
+                        FROM socio 
+                        WHERE DATE(FechaVencimientoCuota) = CURDATE() 
+                        AND Activo = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, sqlCon);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var persona = new Persona
+                    {
+                        Tipo = "Socio",
+                        Nombre = reader.GetString("Nombre"),
+                        Apellido = reader.GetString("Apellido"),
+                        Documento = reader.GetString("Documento"),
+                        Telefono = reader.GetString("Telefono"),
+                        FNacimiento = reader.GetDateTime("FechaNacimiento"),
+                        Presentado = reader.GetBoolean("AptoFisico")
+                    };
+                    sociosMorosos.Add(persona);
+                }
+
+                return sociosMorosos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener socios morosos: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return sociosMorosos;
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                    reader.Close();
+                if (sqlCon != null && sqlCon.State == System.Data.ConnectionState.Open)
+                    sqlCon.Close();
+            }
+        }
     }
 
     public class Persona

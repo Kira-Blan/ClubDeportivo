@@ -91,7 +91,7 @@ namespace clubDeportivo
                     }
                     else
                     {
-                        MessageBox.Show($"No se encontró el logo en: {rutaLogo}", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                       // MessageBox.Show($"No se encontró el logo en: {rutaLogo}", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
 
                         // Dibuja el texto    
