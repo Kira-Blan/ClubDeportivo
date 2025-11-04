@@ -61,11 +61,11 @@
             // lblPagarCuota
             // 
             lblPagarCuota.AutoSize = true;
-            lblPagarCuota.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPagarCuota.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPagarCuota.Location = new Point(26, 22);
             lblPagarCuota.Margin = new Padding(2, 0, 2, 0);
             lblPagarCuota.Name = "lblPagarCuota";
-            lblPagarCuota.Size = new Size(145, 31);
+            lblPagarCuota.Size = new Size(177, 31);
             lblPagarCuota.TabIndex = 2;
             lblPagarCuota.Text = "Pagar Cuota";
             // 
@@ -159,18 +159,18 @@
             txtNombre.ForeColor = SystemColors.InactiveCaption;
             txtNombre.Location = new Point(165, 117);
             txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Nombre del socio";
             txtNombre.Size = new Size(238, 23);
             txtNombre.TabIndex = 38;
-            txtNombre.Text = "Nombre del socio";
             // 
             // txtApellido
             // 
             txtApellido.ForeColor = SystemColors.InactiveCaption;
             txtApellido.Location = new Point(165, 146);
             txtApellido.Name = "txtApellido";
+            txtApellido.PlaceholderText = "Apellido del socio";
             txtApellido.Size = new Size(238, 23);
             txtApellido.TabIndex = 39;
-            txtApellido.Text = "Apellido del socio";
             // 
             // lblUltimoVencimiento
             // 
@@ -210,9 +210,9 @@
             txtUltimoVencimiento.ForeColor = SystemColors.InactiveCaption;
             txtUltimoVencimiento.Location = new Point(165, 177);
             txtUltimoVencimiento.Name = "txtUltimoVencimiento";
+            txtUltimoVencimiento.PlaceholderText = "Ultimo vencimiento registrado";
             txtUltimoVencimiento.Size = new Size(238, 23);
             txtUltimoVencimiento.TabIndex = 43;
-            txtUltimoVencimiento.Text = "Ultimo vencimiento registrado";
             // 
             // gbMetodoPago
             // 
@@ -275,9 +275,9 @@
             txtMonto.ForeColor = SystemColors.InactiveCaption;
             txtMonto.Location = new Point(84, 344);
             txtMonto.Name = "txtMonto";
+            txtMonto.PlaceholderText = "Total a pagar";
             txtMonto.Size = new Size(127, 23);
             txtMonto.TabIndex = 46;
-            txtMonto.Text = "Total a pagar";
             // 
             // rb6Cuotas
             // 
