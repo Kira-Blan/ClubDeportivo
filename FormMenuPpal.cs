@@ -35,7 +35,8 @@ namespace clubDeportivo
 
         private void btnPagoActividad_Click(object sender, EventArgs e)
         {
-
+            FormPagarActividad frm = new FormPagarActividad();
+            frm.Show();
         }
 
         private void btnListaMorosos_Click(object sender, EventArgs e)
