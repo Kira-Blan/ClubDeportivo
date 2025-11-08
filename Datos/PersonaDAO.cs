@@ -247,11 +247,10 @@ namespace clubDeportivo.Datos
                 sqlCon = Conexion.getInstancia().CrearConexion();
                 sqlCon.Open();
 
-                string query = @"SELECT Nombre, Apellido, Documento, Telefono, 
-                        FechaNacimiento, AptoFisico 
-                        FROM socio 
-                        WHERE DATE(FechaVencimientoCuota) = CURDATE() 
-                        AND Activo = 1";
+                string query = @"SELECT s.Nombre, s.Apellido, s.Documento, s.Telefono, s.FechaNacimiento, s.AptoFisico
+                                FROM socio s INNER JOIN cuota c ON s.IdSocio = c.IdSocio
+                                WHERE DATE(c.FechaVencimientoCuota) = CURDATE()
+                                AND s.Activo = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, sqlCon);
                 reader = cmd.ExecuteReader();

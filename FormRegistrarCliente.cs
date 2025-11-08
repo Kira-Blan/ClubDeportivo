@@ -277,7 +277,11 @@ namespace clubDeportivo
             // Permite sólo números y teclas de control
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                e.Handled = true;  // Bloquea el caracter               
+                e.Handled = true;  // Bloquea el caracter
+
+                MessageBox.Show("Debe ingresar sólo números", "Error de ingreso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCheckDocumento.Focus();
+                return;
             }
         }
 
