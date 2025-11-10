@@ -45,19 +45,50 @@ namespace clubDeportivo
             formMorosos.ShowDialog();
         }
 
+        /* private void btnCierreSesion_Click(object sender, EventArgs e)
+         {
+             // Confirmar el cierre de sesión
+             DialogResult resultado = MessageBox.Show(
+                 "¿Desea cerrar sesión?",
+                 "Cerrar sesión",
+                 MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question
+                 );
+
+             if (resultado == DialogResult.Yes)
+             {
+                 this.Close(); // Cierra y vuelve al Login
+             }
+         } */
+
         private void btnCierreSesion_Click(object sender, EventArgs e)
         {
             // Confirmar el cierre de sesión
             DialogResult resultado = MessageBox.Show(
-                "¿Desea cerrar sesión?",
+                "¿Desea cerrar sesión? Todas las ventanas abiertas se cerrarán.",
                 "Cerrar sesión",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
-                );
+            );
 
             if (resultado == DialogResult.Yes)
             {
-                this.Close(); // Cierra y vuelve al Login
+                // Cerrar todos los formularios excepto el de login
+                foreach (Form form in Application.OpenForms.Cast<Form>().ToList())
+                {
+                    if (!(form is FormLogin))
+                    {
+                        form.Close();
+                    }
+                }
+
+                // Mostrar el formulario de login si no está visible
+                FormLogin loginForm = Application.OpenForms.OfType<FormLogin>().FirstOrDefault();
+                if (loginForm != null)
+                {
+                    loginForm.Show();
+                }
+
             }
         }
     }
