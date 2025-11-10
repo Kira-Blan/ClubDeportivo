@@ -43,7 +43,13 @@ namespace clubDeportivo
                     this.Hide();
                     FormMenuPpal menu = new FormMenuPpal();
                     menu.ShowDialog();
-                    this.Hide(); // this.Close()
+
+                    this.Show(); // this.Hide()
+
+                    // limpia los campos
+                    txtUsuario.Clear();
+                    txtPass.Clear();   
+                    txtUsuario.Focus();
                 }
                 else
                 {

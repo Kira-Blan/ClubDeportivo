@@ -5,6 +5,9 @@
     <Compile Update="FormCarnet.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormComprobantePago.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormMorosos.cs">
       <SubType>Form</SubType>
     </Compile>

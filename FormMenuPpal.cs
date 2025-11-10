@@ -7,7 +7,7 @@ namespace clubDeportivo
     {
         public FormMenuPpal()
         {
-            InitializeComponent();         
+            InitializeComponent();
         }
 
         private void FormMenuPpal_Load(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace clubDeportivo
 
         private void btnPagoCuota_Click(object sender, EventArgs e)
         {
-           FormPagarCuota frm = new FormPagarCuota();
+            FormPagarCuota frm = new FormPagarCuota();
             frm.Show();
         }
 
@@ -43,6 +43,21 @@ namespace clubDeportivo
             FormMorosos formMorosos = new FormMorosos();
             formMorosos.ShowDialog();
         }
-              
+
+        private void btnCierreSesion_Click(object sender, EventArgs e)
+        {
+            // Confirmar el cierre de sesión
+            DialogResult resultado = MessageBox.Show(
+                "¿Desea cerrar sesión?",
+                "Cerrar sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if (resultado == DialogResult.Yes)
+            {
+                this.Close(); // Cierra y vuelve al Login
+            }
+        }
     }
 }

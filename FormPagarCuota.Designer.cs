@@ -49,7 +49,7 @@
             rbDebito = new RadioButton();
             rbEfectivo = new RadioButton();
             lblMonto = new Label();
-            txtMonto = new TextBox();
+            txtImporteCuota = new TextBox();
             rb6Cuotas = new RadioButton();
             rb3Cuotas = new RadioButton();
             rb1Cuota = new RadioButton();
@@ -95,6 +95,7 @@
             btnBuscar.TabIndex = 29;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // lblFVencimiento
             // 
@@ -156,7 +157,8 @@
             // 
             // txtNombre
             // 
-            txtNombre.ForeColor = SystemColors.InactiveCaption;
+            txtNombre.BackColor = Color.White;
+            txtNombre.ForeColor = Color.Black;
             txtNombre.Location = new Point(165, 117);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Nombre del socio";
@@ -165,7 +167,8 @@
             // 
             // txtApellido
             // 
-            txtApellido.ForeColor = SystemColors.InactiveCaption;
+            txtApellido.BackColor = Color.White;
+            txtApellido.ForeColor = Color.Black;
             txtApellido.Location = new Point(165, 146);
             txtApellido.Name = "txtApellido";
             txtApellido.PlaceholderText = "Apellido del socio";
@@ -186,28 +189,29 @@
             // 
             btnConfirmar.BackColor = Color.PaleGreen;
             btnConfirmar.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnConfirmar.Location = new Point(232, 381);
+            btnConfirmar.Location = new Point(319, 375);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(137, 42);
+            btnConfirmar.Size = new Size(164, 54);
             btnConfirmar.TabIndex = 42;
-            btnConfirmar.Text = "Confirmar Pago";
+            btnConfirmar.Text = "Pagar y Generar Comprobante";
             btnConfirmar.UseVisualStyleBackColor = false;
+            btnConfirmar.Click += btnPagarGenerarComprobante_Click;
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.DarkSalmon;
             btnCancelar.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnCancelar.Location = new Point(387, 381);
+            btnCancelar.Location = new Point(165, 381);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(105, 42);
             btnCancelar.TabIndex = 42;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
             // 
             // txtUltimoVencimiento
             // 
-            txtUltimoVencimiento.ForeColor = SystemColors.InactiveCaption;
+            txtUltimoVencimiento.BackColor = Color.White;
+            txtUltimoVencimiento.ForeColor = Color.Black;
             txtUltimoVencimiento.Location = new Point(165, 177);
             txtUltimoVencimiento.Name = "txtUltimoVencimiento";
             txtUltimoVencimiento.PlaceholderText = "Ultimo vencimiento registrado";
@@ -266,18 +270,19 @@
             lblMonto.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblMonto.Location = new Point(31, 344);
             lblMonto.Name = "lblMonto";
-            lblMonto.Size = new Size(47, 17);
+            lblMonto.Size = new Size(51, 17);
             lblMonto.TabIndex = 45;
-            lblMonto.Text = "Monto";
+            lblMonto.Text = "Monto:";
             // 
-            // txtMonto
+            // txtImporteCuota
             // 
-            txtMonto.ForeColor = SystemColors.InactiveCaption;
-            txtMonto.Location = new Point(84, 344);
-            txtMonto.Name = "txtMonto";
-            txtMonto.PlaceholderText = "Total a pagar";
-            txtMonto.Size = new Size(127, 23);
-            txtMonto.TabIndex = 46;
+            txtImporteCuota.BackColor = Color.White;
+            txtImporteCuota.ForeColor = Color.Black;
+            txtImporteCuota.Location = new Point(84, 344);
+            txtImporteCuota.Name = "txtImporteCuota";
+            txtImporteCuota.PlaceholderText = "Total a pagar";
+            txtImporteCuota.Size = new Size(127, 23);
+            txtImporteCuota.TabIndex = 46;
             // 
             // rb6Cuotas
             // 
@@ -331,7 +336,7 @@
             BackColor = Color.AliceBlue;
             ClientSize = new Size(504, 435);
             Controls.Add(gbCuotas);
-            Controls.Add(txtMonto);
+            Controls.Add(txtImporteCuota);
             Controls.Add(lblMonto);
             Controls.Add(gbMetodoPago);
             Controls.Add(txtUltimoVencimiento);
@@ -355,6 +360,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagar Cuota";
             Load += FormPagarCuota_Load;
+            Shown += FormPagarCuota_Shown;
             gbMetodoPago.ResumeLayout(false);
             gbMetodoPago.PerformLayout();
             gbCuotas.ResumeLayout(false);
@@ -389,7 +395,7 @@
         private CheckBox checkBox2;
         private CheckBox checkBox1;
         private Label lblMonto;
-        private TextBox txtMonto;
+        private TextBox txtImporteCuota;
         private RadioButton rbEfectivo;
         private RadioButton rbCredito;
         private RadioButton rbDebito;

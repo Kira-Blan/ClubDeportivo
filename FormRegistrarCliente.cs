@@ -138,19 +138,19 @@ namespace clubDeportivo
             }
         }
 
-        private void BuscarPorDocumento(long documento)
+        public void BuscarPorDocumento(long documento)
         {
             Persona_DAO dao = new Persona_DAO();
             Datos.Persona personaEncontrada = dao.BuscarPorDocumento(documento.ToString());               
 
-            // Mostrar el panel de datos
+            // Muestra el panel de datos
             panelDatosPersona.Visible = true;
 
             if (personaEncontrada != null)
             {
                 MessageBox.Show("Persona encontrada en el sistema como " + personaEncontrada.Tipo, "Búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Cargar los datos de la persona encontrada
+                // Carga los datos de la persona encontrada
                 txtNombre.Text = personaEncontrada!.Nombre;
                 txtApellido.Text = personaEncontrada.Apellido;
                 txtDocumento.Text = personaEncontrada.Documento;
@@ -158,7 +158,7 @@ namespace clubDeportivo
                 dtpFNacimiento.Value = personaEncontrada.FNacimiento;
                 chkPresentado.Checked = personaEncontrada.Presentado.HasValue ? personaEncontrada.Presentado.Value : false;
 
-                // Deshabilitar los campos para que no se puedan editar los datos existentes.
+                // Deshabilita los campos para que no se puedan editar los datos existentes.
                 habilitarCampos(false);
             }
             else
@@ -166,37 +166,37 @@ namespace clubDeportivo
                 //Persona inexistente (se habilita la carga de datos)
                 MessageBox.Show("Persona no encontrada. Complete los campos para registrarla.", "Nueva Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Limpiar los campos
+                // Limpia los campos
                 limpiarCampos();
 
-                // Habilitar los campos para poder completar los datos
+                // Habilita los campos para poder completar los datos
                 habilitarCampos(true);
                 btnSocio.Visible = true;
                 btnNoSocio.Visible = true;
 
-                // Dar foco al primer campo
+                // Da foco al primer campo
                 txtNombre.Focus();
 
                 FormRegistrarCliente form = new FormRegistrarCliente(documento.ToString());
                 txtDocumento.Text = documento.ToString();
             }
 
-            // Habilitar los botones Socio, No socio y Cancelar            
+            // Habilita los botones Socio, No socio y Cancelar            
             btnCancelar.Enabled = true;
             btnSocio.Enabled = true;
             btnNoSocio.Enabled = true;
         }
 
-        private void limpiarCampos()
+        public void limpiarCampos()
         {
-            // Limpiar todos los campos
+            // Limpia todos los campos
             txtCheckDocumento.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDocumento.Text = "";
             txtTelefono.Text = "";
 
-            // Reestablecer valores
+            // Reestablece valores
             dtpFNacimiento.Value = DateTime.Today;
             chkPresentado.Checked = false;
         }
@@ -323,11 +323,7 @@ namespace clubDeportivo
                     panelDatosPersona.Visible = false;
                     txtCheckDocumento.Focus();
 
-                    this.Close();
-                       
-
-                   // FormSocio formSocio = new FormSocio(txtDocumento.Text.Trim());
-                   // formSocio.Show();
+                    this.Close();                                                         
                 }               
             }
         }
@@ -335,19 +331,9 @@ namespace clubDeportivo
         private void btnInscribirNoSocio_Click(object sender, EventArgs e)
         {
             if (!CamposObligatorios())
-                return;
+                return;            
 
-            // Validar que todos los campos estén completos
-            /* if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                 string.IsNullOrWhiteSpace(txtDocumento.Text))
-             {
-                 MessageBox.Show("Por favor complete todos los campos obligatorios (Nombre, Apellido, Documento)",
-                     "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                 return;
-             }*/
-
-            // Confirmar la inscripción
+            // Confirma la inscripción
             DialogResult resultado = MessageBox.Show(
                 "¿Desea inscribir a esta persona como NO SOCIO?",
                 "Confirmar Inscripción",
@@ -356,7 +342,7 @@ namespace clubDeportivo
 
             if (resultado == DialogResult.Yes)
             {
-                // Obtener los valores del formulario
+                // Obtienr los valores del formulario
                 string nombre = txtNombre.Text.Trim();
                 string apellido = txtApellido.Text.Trim();
                 string documento = txtDocumento.Text.Trim();
@@ -364,7 +350,7 @@ namespace clubDeportivo
                 DateTime fNacimiento = dtpFNacimiento.Value;
                 bool presentado = chkPresentado.Checked;
 
-                // Crear instancia del DAO y guardar
+                // Crea instancia del DAO y guarda
                 Persona_DAO personaDAO = new Persona_DAO();
                 bool exito = personaDAO.InscribirNoSocio(nombre, apellido, documento,
                                                           telefono, fNacimiento, presentado);
@@ -376,7 +362,7 @@ namespace clubDeportivo
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
-                    // Limpiar el formulario
+                    // Limpia el formulario
                     limpiarCampos();
                     panelDatosPersona.Visible = false;
                     txtCheckDocumento.Focus();

@@ -23,8 +23,6 @@ namespace clubDeportivo
         {
             InitializeComponent();
             documentoSocio = documento;
-
-            //MessageBox.Show($"Documento recibido: '{documentoSocio}'", "Debug");
         }
 
         private void FormSocio_Load(object sender, EventArgs e)
@@ -44,10 +42,8 @@ namespace clubDeportivo
             // Crea la instancia DAO y llama al método
              Persona_DAO dao = new Persona_DAO();
 
-            // Obtiene el Documento ingresado
-           // string documento = Persona_DAO(documento);
-
-            // Obtener la persona de la BD
+           
+            // Obtiene la persona de la BD
             Persona persona = ObtenerPersona(documentoSocio);
 
             if (persona != null)

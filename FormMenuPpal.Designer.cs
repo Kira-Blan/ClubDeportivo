@@ -33,13 +33,14 @@
             btnPagoCuota = new Button();
             btnListaMorosos = new Button();
             btnPagoActividad = new Button();
+            btnCierreSesion = new Button();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(162, 33);
+            lblTitulo.Location = new Point(162, 63);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(174, 31);
             lblTitulo.TabIndex = 1;
@@ -50,7 +51,7 @@
             btnRegistarCliente.BackColor = Color.White;
             btnRegistarCliente.FlatStyle = FlatStyle.Flat;
             btnRegistarCliente.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRegistarCliente.Location = new Point(150, 107);
+            btnRegistarCliente.Location = new Point(150, 144);
             btnRegistarCliente.Name = "btnRegistarCliente";
             btnRegistarCliente.Size = new Size(200, 43);
             btnRegistarCliente.TabIndex = 2;
@@ -63,7 +64,7 @@
             btnPagoCuota.BackColor = Color.White;
             btnPagoCuota.FlatStyle = FlatStyle.Flat;
             btnPagoCuota.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPagoCuota.Location = new Point(150, 165);
+            btnPagoCuota.Location = new Point(150, 210);
             btnPagoCuota.Name = "btnPagoCuota";
             btnPagoCuota.Size = new Size(200, 43);
             btnPagoCuota.TabIndex = 3;
@@ -76,7 +77,7 @@
             btnListaMorosos.BackColor = Color.White;
             btnListaMorosos.FlatStyle = FlatStyle.Flat;
             btnListaMorosos.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnListaMorosos.Location = new Point(150, 299);
+            btnListaMorosos.Location = new Point(150, 342);
             btnListaMorosos.Name = "btnListaMorosos";
             btnListaMorosos.Size = new Size(200, 43);
             btnListaMorosos.TabIndex = 5;
@@ -88,7 +89,7 @@
             // 
             btnPagoActividad.BackColor = Color.White;
             btnPagoActividad.FlatStyle = FlatStyle.Flat;
-            btnPagoActividad.Location = new Point(150, 233);
+            btnPagoActividad.Location = new Point(150, 277);
             btnPagoActividad.Name = "btnPagoActividad";
             btnPagoActividad.Size = new Size(200, 43);
             btnPagoActividad.TabIndex = 4;
@@ -96,12 +97,26 @@
             btnPagoActividad.UseVisualStyleBackColor = false;
             btnPagoActividad.Click += btnPagoActividad_Click;
             // 
+            // btnCierreSesion
+            // 
+            btnCierreSesion.BackColor = Color.LightSkyBlue;
+            btnCierreSesion.FlatStyle = FlatStyle.Flat;
+            btnCierreSesion.Font = new Font("Arial", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCierreSesion.Location = new Point(389, 9);
+            btnCierreSesion.Name = "btnCierreSesion";
+            btnCierreSesion.Size = new Size(85, 38);
+            btnCierreSesion.TabIndex = 6;
+            btnCierreSesion.Text = "Cerrar Sesión";
+            btnCierreSesion.UseVisualStyleBackColor = false;
+            btnCierreSesion.Click += btnCierreSesion_Click;
+            // 
             // FormMenuPpal
             // 
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(484, 385);
+            ClientSize = new Size(484, 437);
+            Controls.Add(btnCierreSesion);
             Controls.Add(btnPagoActividad);
             Controls.Add(btnListaMorosos);
             Controls.Add(btnPagoCuota);
@@ -135,5 +150,6 @@
         private Button btnListaMorosos;
         private Button btnPagoActividad;
         private Button btnPagarActividad;
+        private Button btnCierreSesion;
     }
 }
