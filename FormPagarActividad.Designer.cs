@@ -49,11 +49,11 @@
             lblCheckDocumento = new Label();
             btnBuscar = new Button();
             lblPagarActividad = new Label();
-            txtActividadAPagar = new TextBox();
             lblNombreEncontrado = new Label();
             lblApellidoEncontrado = new Label();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
+            comboBoxActividades = new ComboBox();
             gbCuotas.SuspendLayout();
             gbMetodoPago.SuspendLayout();
             SuspendLayout();
@@ -280,16 +280,6 @@
             lblPagarActividad.TabIndex = 57;
             lblPagarActividad.Text = "Pagar Actividad";
             // 
-            // txtActividadAPagar
-            // 
-            txtActividadAPagar.BackColor = SystemColors.Window;
-            txtActividadAPagar.ForeColor = SystemColors.Desktop;
-            txtActividadAPagar.Location = new Point(163, 178);
-            txtActividadAPagar.Name = "txtActividadAPagar";
-            txtActividadAPagar.ReadOnly = true;
-            txtActividadAPagar.Size = new Size(238, 23);
-            txtActividadAPagar.TabIndex = 72;
-            // 
             // lblNombreEncontrado
             // 
             lblNombreEncontrado.AutoSize = true;
@@ -326,11 +316,21 @@
             txtApellido.Size = new Size(187, 23);
             txtApellido.TabIndex = 80;
             // 
+            // comboBoxActividades
+            // 
+            comboBoxActividades.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxActividades.FormattingEnabled = true;
+            comboBoxActividades.Location = new Point(163, 179);
+            comboBoxActividades.Name = "comboBoxActividades";
+            comboBoxActividades.Size = new Size(238, 23);
+            comboBoxActividades.TabIndex = 81;
+            // 
             // FormPagarActividad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(504, 342);
+            Controls.Add(comboBoxActividades);
             Controls.Add(txtApellido);
             Controls.Add(txtNombre);
             Controls.Add(lblApellidoEncontrado);
@@ -339,7 +339,6 @@
             Controls.Add(txtMonto);
             Controls.Add(lblMonto);
             Controls.Add(gbMetodoPago);
-            Controls.Add(txtActividadAPagar);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);
             Controls.Add(lblActividad);
@@ -387,10 +386,10 @@
         private Label lblCheckDocumento;
         private Button btnBuscar;
         private Label lblPagarActividad;
-        private TextBox txtActividadAPagar;
         private Label lblNombreEncontrado;
         private Label lblApellidoEncontrado;
         private TextBox txtNombre;
         private TextBox txtApellido;
+        private ComboBox comboBoxActividades;
     }
 }

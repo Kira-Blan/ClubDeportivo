@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace clubDeportivo
 {
@@ -27,7 +28,8 @@ namespace clubDeportivo
             rb1Cuota.Checked = false;
             btnConfirmar.Enabled = false;
             btnCancelar.Enabled = false;
-        
+            comboBoxActividades.DataSource = Enum.GetValues(typeof(Actividades));
+
         }
 
         private void txtMonto_TextChanged(object sender, EventArgs e)
@@ -46,15 +48,15 @@ namespace clubDeportivo
             }
 
             // 1) Actividad obligatoria
-            string actividad = txtActividadAPagar.Text.Trim();
-            if (string.IsNullOrWhiteSpace(actividad))
+            if (comboBoxActividades.SelectedItem == null)
             {
-                MessageBox.Show("Ingresá la actividad.", "Validación",
+                MessageBox.Show("Seleccioná una actividad.", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtActividadAPagar.Focus();
+                comboBoxActividades.Focus();
                 return;
             }
 
+            string actividad = comboBoxActividades.SelectedItem.ToString();
             // 2) Monto válido (acepta coma o punto)
             if (!decimal.TryParse(
                     txtMonto.Text.Replace(',', '.'),
@@ -265,6 +267,15 @@ namespace clubDeportivo
         {
             txtCheckDocumento.Focus();
         }
+    }
+
+    public enum Actividades
+    {
+        Yoga,
+        Pilates,
+        Gimnasio,
+        Pileta,
+        Opción,
     }
 }
 
