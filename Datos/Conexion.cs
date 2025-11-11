@@ -15,9 +15,9 @@ namespace clubDeportivo.Datos
         {
             this.baseDatos = "proyecto"; 
             this.servidor = "localhost";
-            this.puerto = "3307";
+            this.puerto = "3306";
             this.usuario = "root";
-            this.clave = "";
+            this.clave = "0899";
         }
 
         public MySqlConnection CrearConexion()

@@ -52,6 +52,8 @@
             txtActividadAPagar = new TextBox();
             lblNombreEncontrado = new Label();
             lblApellidoEncontrado = new Label();
+            txtNombre = new TextBox();
+            txtApellido = new TextBox();
             gbCuotas.SuspendLayout();
             gbMetodoPago.SuspendLayout();
             SuspendLayout();
@@ -244,6 +246,7 @@
             txtCheckDocumento.Name = "txtCheckDocumento";
             txtCheckDocumento.Size = new Size(187, 23);
             txtCheckDocumento.TabIndex = 60;
+            txtCheckDocumento.KeyDown += txtCheckDocumento_KeyDown;
             // 
             // lblCheckDocumento
             // 
@@ -307,11 +310,27 @@
             lblApellidoEncontrado.Size = new Size(0, 17);
             lblApellidoEncontrado.TabIndex = 78;
             // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(163, 119);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(187, 23);
+            txtNombre.TabIndex = 79;
+            // 
+            // txtApellido
+            // 
+            txtApellido.Location = new Point(163, 149);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(187, 23);
+            txtApellido.TabIndex = 80;
+            // 
             // FormPagarActividad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(504, 342);
+            Controls.Add(txtApellido);
+            Controls.Add(txtNombre);
             Controls.Add(lblApellidoEncontrado);
             Controls.Add(lblNombreEncontrado);
             Controls.Add(gbCuotas);
@@ -333,6 +352,7 @@
             Name = "FormPagarActividad";
             Text = "Form1";
             Load += FormPagarActividad_Load;
+            Shown += FormPagarActividad_Shown;
             gbCuotas.ResumeLayout(false);
             gbCuotas.PerformLayout();
             gbMetodoPago.ResumeLayout(false);
@@ -368,5 +388,7 @@
         private TextBox txtActividadAPagar;
         private Label lblNombreEncontrado;
         private Label lblApellidoEncontrado;
+        private TextBox txtNombre;
+        private TextBox txtApellido;
     }
 }
