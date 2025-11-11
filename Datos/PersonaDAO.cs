@@ -73,7 +73,7 @@ namespace clubDeportivo.Datos
 
                 string querySocio = @"INSERT INTO socio (Nombre, Apellido, Documento, Telefono, FechaNacimiento, AptoFisico, FechaInscripcion, Activo)  +
                                      VALUES (@nombre, @apellido, @documento, @telefono, @fechaNacimiento, @aptoFisico, @fInscripcion, @activo)";
-                                    // "SELECT LAST_INSERT_ID();"; // Obtiene el IdSocio recien creado
+                // "SELECT LAST_INSERT_ID();"; // Obtiene el IdSocio recien creado
 
                 MySqlCommand comando = new MySqlCommand(querySocio, sqlCon);
                 comando.Transaction = transaccion;
@@ -82,7 +82,7 @@ namespace clubDeportivo.Datos
                 comando.Parameters.AddWithValue("@apellido", apellido);
                 comando.Parameters.AddWithValue("@documento", documento);
                 comando.Parameters.AddWithValue("@telefono", telefono);
-                comando.Parameters.AddWithValue("@fechaNacimiento", FNacimiento.Date);      
+                comando.Parameters.AddWithValue("@fechaNacimiento", FNacimiento.Date);
                 comando.Parameters.AddWithValue("@aptoFisico", aptoFisico);
                 //DateTime fInscripcion = DateTime.Now.Date;
                 comando.Parameters.AddWithValue("@fInscripcion", DateTime.Now.Date);
@@ -111,7 +111,7 @@ namespace clubDeportivo.Datos
 
                 // Confirma la transacción
                 transaccion.Commit();
-                return true;                
+                return true;
             }
             catch (Exception ex)
             {
@@ -137,7 +137,7 @@ namespace clubDeportivo.Datos
                     sqlCon.Close();
                 }
             }
-        }      
+        }
 
         // Método para inscribir un NO SOCIO
         public bool InscribirNoSocio(string nombre, string apellido, string documento,
@@ -244,7 +244,7 @@ namespace clubDeportivo.Datos
                 string queryNoSocio = "SELECT Nombre, Apellido, Documento, Telefono, FechaNacimiento, AptoFisico FROM nosocio WHERE Documento =@documento";
                 MySqlCommand cmdNoSocio = new MySqlCommand(queryNoSocio, sqlCon);
                 cmdNoSocio.Parameters.AddWithValue("@documento", documento);
-                reader = cmdNoSocio.ExecuteReader();                
+                reader = cmdNoSocio.ExecuteReader();
 
                 if (reader.Read())
                 {
@@ -359,7 +359,7 @@ namespace clubDeportivo.Datos
                     sqlCon.Close();
             }
         }
-        
+
         public bool RegistrarPagoYGenerarProximaCuota(string documento, decimal importePagado, int cuotas)
         {
             MySqlConnection? sqlCon = null;
@@ -503,6 +503,50 @@ namespace clubDeportivo.Datos
             {
                 if (reader != null && !reader.IsClosed)
                     reader.Close();
+                if (sqlCon != null && sqlCon.State == System.Data.ConnectionState.Open)
+                    sqlCon.Close();
+            }
+        }
+
+
+        public bool PagarActividad(string documento, decimal importe, string actividad)
+        {
+            MySqlConnection? sqlCon = null;
+            MySqlTransaction? transaccion = null;
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(documento))
+                    throw new Exception("Documento vacío.");
+                if (string.IsNullOrWhiteSpace(actividad))
+                    throw new Exception("Actividad vacía.");
+                if (importe <= 0)
+                    throw new Exception("Importe inválido.");
+
+                sqlCon = Conexion.getInstancia().CrearConexion();
+                sqlCon.Open();
+
+                string insertSql = @"
+            INSERT INTO pagoActividad (Documento, Actividad, Importe, FechaPago)
+            VALUES (@doc, @act, @imp, @fecha);";
+
+                using var cmd = new MySqlCommand(insertSql, sqlCon);
+                cmd.Parameters.AddWithValue("@doc", documento);
+                cmd.Parameters.AddWithValue("@act", actividad);
+                cmd.Parameters.AddWithValue("@imp", importe);
+                cmd.Parameters.AddWithValue("@fecha", DateTime.Now);
+
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error al pagar actividad: " + ex.Message,
+                    "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
                 if (sqlCon != null && sqlCon.State == System.Data.ConnectionState.Open)
                     sqlCon.Close();
             }
