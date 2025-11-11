@@ -71,9 +71,11 @@ namespace clubDeportivo.Datos
                 sqlCon.Open();
                 transaccion = sqlCon.BeginTransaction(); // Inicia la transacción
 
-                string querySocio = @"INSERT INTO socio (Nombre, Apellido, Documento, Telefono, FechaNacimiento, AptoFisico, FechaInscripcion, Activo)  +
-                                     VALUES (@nombre, @apellido, @documento, @telefono, @fechaNacimiento, @aptoFisico, @fInscripcion, @activo)";
-                // "SELECT LAST_INSERT_ID();"; // Obtiene el IdSocio recien creado
+                string querySocio = @"INSERT INTO socio 
+    (Nombre, Apellido, Documento, Telefono, FechaNacimiento, AptoFisico, FechaInscripcion, Activo) 
+    VALUES 
+    (@nombre, @apellido, @documento, @telefono, @fechaNacimiento, @aptoFisico, @fInscripcion, @activo);
+    SELECT LAST_INSERT_ID();";
 
                 MySqlCommand comando = new MySqlCommand(querySocio, sqlCon);
                 comando.Transaction = transaccion;
@@ -100,7 +102,7 @@ namespace clubDeportivo.Datos
                      VALUES(@IdSocio, @documento, @fechaPagoCuota, @fechaVencimientoCuota, @importeCuota, @importeAdeudado)",
                     sqlCon, transaccion);
 
-                comandoCuota.Parameters.AddWithValue("@idSocio", IdSocio);
+                comandoCuota.Parameters.AddWithValue("@IdSocio", IdSocio);
                 comandoCuota.Parameters.AddWithValue("@documento", documento);
                 comandoCuota.Parameters.AddWithValue("@fechaPagoCuota", DBNull.Value);
                 comandoCuota.Parameters.AddWithValue("@fechaVencimientoCuota", fechaVencimientoCuota);
@@ -164,7 +166,7 @@ namespace clubDeportivo.Datos
                 comando.Parameters.AddWithValue("@apellido", apellido);
                 comando.Parameters.AddWithValue("@documento", documento);
                 comando.Parameters.AddWithValue("@telefono", telefono);
-                comando.Parameters.AddWithValue("@fechaNacimiento", FNacimiento.ToString("dd-MM-yyyy"));
+                comando.Parameters.AddWithValue("@fechaNacimiento", FNacimiento.Date);
                 comando.Parameters.AddWithValue("@aptoFisico", aptoFisico);
 
                 sqlCon.Open();
