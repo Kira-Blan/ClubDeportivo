@@ -42,7 +42,7 @@
             lblTitulo.Font = new Font("Arial Narrow", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.Location = new Point(162, 63);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(174, 31);
+            lblTitulo.Size = new Size(264, 49);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Club Deportivo";
             // 
@@ -51,9 +51,9 @@
             btnRegistarCliente.BackColor = Color.White;
             btnRegistarCliente.FlatStyle = FlatStyle.Flat;
             btnRegistarCliente.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnRegistarCliente.Location = new Point(150, 144);
+            btnRegistarCliente.Location = new Point(145, 144);
             btnRegistarCliente.Name = "btnRegistarCliente";
-            btnRegistarCliente.Size = new Size(200, 43);
+            btnRegistarCliente.Size = new Size(213, 43);
             btnRegistarCliente.TabIndex = 2;
             btnRegistarCliente.Text = "Registrar Cliente";
             btnRegistarCliente.UseVisualStyleBackColor = false;
@@ -64,9 +64,9 @@
             btnPagoCuota.BackColor = Color.White;
             btnPagoCuota.FlatStyle = FlatStyle.Flat;
             btnPagoCuota.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPagoCuota.Location = new Point(150, 210);
+            btnPagoCuota.Location = new Point(145, 210);
             btnPagoCuota.Name = "btnPagoCuota";
-            btnPagoCuota.Size = new Size(200, 43);
+            btnPagoCuota.Size = new Size(213, 43);
             btnPagoCuota.TabIndex = 3;
             btnPagoCuota.Text = "Pago de Cuota";
             btnPagoCuota.UseVisualStyleBackColor = false;
@@ -77,11 +77,11 @@
             btnListaMorosos.BackColor = Color.White;
             btnListaMorosos.FlatStyle = FlatStyle.Flat;
             btnListaMorosos.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnListaMorosos.Location = new Point(150, 342);
+            btnListaMorosos.Location = new Point(145, 342);
             btnListaMorosos.Name = "btnListaMorosos";
-            btnListaMorosos.Size = new Size(200, 43);
+            btnListaMorosos.Size = new Size(213, 43);
             btnListaMorosos.TabIndex = 5;
-            btnListaMorosos.Text = "Listado de Morosos";
+            btnListaMorosos.Text = "Vencimientos Diarios";
             btnListaMorosos.UseVisualStyleBackColor = false;
             btnListaMorosos.Click += btnListaMorosos_Click;
             // 
@@ -89,9 +89,9 @@
             // 
             btnPagoActividad.BackColor = Color.White;
             btnPagoActividad.FlatStyle = FlatStyle.Flat;
-            btnPagoActividad.Location = new Point(150, 277);
+            btnPagoActividad.Location = new Point(145, 277);
             btnPagoActividad.Name = "btnPagoActividad";
-            btnPagoActividad.Size = new Size(200, 43);
+            btnPagoActividad.Size = new Size(213, 43);
             btnPagoActividad.TabIndex = 4;
             btnPagoActividad.Text = "Pago de Actividad";
             btnPagoActividad.UseVisualStyleBackColor = false;
@@ -112,7 +112,7 @@
             // 
             // FormMenuPpal
             // 
-            AutoScaleDimensions = new SizeF(7F, 16F);
+            AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(484, 437);

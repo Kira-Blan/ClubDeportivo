@@ -74,7 +74,7 @@ namespace clubDeportivo
 
             var dao = new Persona_DAO();
             Persona? personaEncontrada = dao.BuscarPorDocumento(Documento);
-            
+
             socioActual = BuscarPorDocumento(documento); // Asigna el resultado a la variable de clase
 
             if (socioActual is not null)
@@ -83,11 +83,11 @@ namespace clubDeportivo
 
                 // Cargar los datos de la persona encontrada
                 txtNombre.Text = personaEncontrada.Nombre;
-                txtApellido.Text = personaEncontrada.Apellido;                
+                txtApellido.Text = personaEncontrada.Apellido;
 
                 if (personaEncontrada.ImporteCuota is not null)
                     txtUltimoVencimiento.Text = personaEncontrada.FechaVencimientoCuota?.ToShortDateString();
-                    txtImporteCuota.Text = personaEncontrada.ImporteCuota.Value.ToString();
+                txtImporteCuota.Text = personaEncontrada.ImporteCuota.Value.ToString();
             }
             else
             {
@@ -208,7 +208,7 @@ namespace clubDeportivo
         private void FormPagarCuota_Shown(object sender, EventArgs e)
         {
             txtCheckDocumento.Focus();
-        }        
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -223,7 +223,7 @@ namespace clubDeportivo
         private void btnPagarGenerarComprobante_Click(object sender, EventArgs e)
         {
             try
-            {             
+            {
                 if (socioActual == null)
                 {
                     MessageBox.Show("Primero debe buscar y encontrar un socio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -247,7 +247,7 @@ namespace clubDeportivo
                     else if (rb6Cuotas.Checked)
                         cuotas = 6;
                 }
-                
+
                 // Confirmar el pago
                 decimal importe = socioActual.ImporteCuota.Value; // Usar el importe del objeto socioActual
                 string mensajeCuotas = cuotas > 1 ? $" en {cuotas} cuotas" : "";
@@ -263,7 +263,7 @@ namespace clubDeportivo
                 var dao = new Persona_DAO();
                 bool pagoExitoso = dao.RegistrarPagoYGenerarProximaCuota(socioActual.Documento, importe, cuotas);
 
-                
+
                 if (!pagoExitoso)
                 {
                     MessageBox.Show("Error al registrar el pago en la base de datos.",
@@ -278,12 +278,12 @@ namespace clubDeportivo
                 // Crear el formulario del comprobante y pasarle el objeto Persona
                 FormComprobantePago formComprobante = new FormComprobantePago(socioActual);
                 formComprobante.ShowDialog();
-               
+
                 // Mostrar el formulario
                 formComprobante.ShowDialog();
 
                 // Limpiar el formulario después del pago
-                  LimpiarCampos();
+                LimpiarCampos();
 
                 MessageBox.Show("Pago registrado exitosamente.",
             "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -293,14 +293,19 @@ namespace clubDeportivo
                 MessageBox.Show($"Error al generar comprobante: {ex.Message}",
                                 "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }     
+        }
 
         public void LimpiarCampos()
         {
             txtNombre.Clear();
             txtApellido.Clear();
             txtUltimoVencimiento.Clear();
-            txtImporteCuota.Clear();            
+            txtImporteCuota.Clear();
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();   
         }
     }
 }

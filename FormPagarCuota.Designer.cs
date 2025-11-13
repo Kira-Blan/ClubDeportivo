@@ -62,36 +62,38 @@
             // 
             lblPagarCuota.AutoSize = true;
             lblPagarCuota.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPagarCuota.Location = new Point(26, 22);
-            lblPagarCuota.Margin = new Padding(2, 0, 2, 0);
+            lblPagarCuota.Location = new Point(37, 37);
             lblPagarCuota.Name = "lblPagarCuota";
-            lblPagarCuota.Size = new Size(177, 31);
+            lblPagarCuota.Size = new Size(262, 47);
             lblPagarCuota.TabIndex = 2;
             lblPagarCuota.Text = "Pagar Cuota";
             // 
             // txtCheckDocumento
             // 
-            txtCheckDocumento.Location = new Point(182, 79);
+            txtCheckDocumento.Location = new Point(260, 132);
+            txtCheckDocumento.Margin = new Padding(4, 5, 4, 5);
             txtCheckDocumento.Name = "txtCheckDocumento";
-            txtCheckDocumento.Size = new Size(187, 23);
+            txtCheckDocumento.Size = new Size(265, 31);
             txtCheckDocumento.TabIndex = 31;
             // 
             // lblCheckDocumento
             // 
             lblCheckDocumento.AutoSize = true;
             lblCheckDocumento.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCheckDocumento.Location = new Point(28, 80);
+            lblCheckDocumento.Location = new Point(40, 133);
+            lblCheckDocumento.Margin = new Padding(4, 0, 4, 0);
             lblCheckDocumento.Name = "lblCheckDocumento";
-            lblCheckDocumento.Size = new Size(128, 17);
+            lblCheckDocumento.Size = new Size(203, 26);
             lblCheckDocumento.TabIndex = 30;
             lblCheckDocumento.Text = "Ingrese N° de DNI:";
             // 
             // btnBuscar
             // 
             btnBuscar.BackColor = Color.PowderBlue;
-            btnBuscar.Location = new Point(396, 79);
+            btnBuscar.Location = new Point(566, 132);
+            btnBuscar.Margin = new Padding(4, 5, 4, 5);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.Size = new Size(107, 38);
             btnBuscar.TabIndex = 29;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -102,9 +104,10 @@
             lblFVencimiento.AutoSize = true;
             lblFVencimiento.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFVencimiento.ForeColor = Color.Black;
-            lblFVencimiento.Location = new Point(273, 242);
+            lblFVencimiento.Location = new Point(390, 403);
+            lblFVencimiento.Margin = new Padding(4, 0, 4, 0);
             lblFVencimiento.Name = "lblFVencimiento";
-            lblFVencimiento.Size = new Size(138, 17);
+            lblFVencimiento.Size = new Size(217, 26);
             lblFVencimiento.TabIndex = 32;
             lblFVencimiento.Text = "Nueva Fecha Venc.:";
             // 
@@ -113,35 +116,37 @@
             dtpFVencimiento.CustomFormat = "dd/MM/yyyy";
             dtpFVencimiento.Font = new Font("Arial", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFVencimiento.Format = DateTimePickerFormat.Custom;
-            dtpFVencimiento.Location = new Point(273, 272);
+            dtpFVencimiento.Location = new Point(390, 453);
+            dtpFVencimiento.Margin = new Padding(4, 5, 4, 5);
             dtpFVencimiento.Name = "dtpFVencimiento";
-            dtpFVencimiento.Size = new Size(146, 26);
+            dtpFVencimiento.Size = new Size(207, 35);
             dtpFVencimiento.TabIndex = 33;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(28, 269);
-            lblTotal.Margin = new Padding(2, 0, 2, 0);
+            lblTotal.Location = new Point(40, 448);
             lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(0, 15);
+            lblTotal.Size = new Size(0, 25);
             lblTotal.TabIndex = 34;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(26, 126);
+            label1.Location = new Point(37, 210);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 15);
+            label1.Size = new Size(0, 25);
             label1.TabIndex = 35;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNombre.Location = new Point(26, 119);
+            lblNombre.Location = new Point(37, 198);
+            lblNombre.Margin = new Padding(4, 0, 4, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(60, 17);
+            lblNombre.Size = new Size(93, 26);
             lblNombre.TabIndex = 36;
             lblNombre.Text = "Nombre";
             // 
@@ -149,9 +154,10 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblApellido.Location = new Point(28, 147);
+            lblApellido.Location = new Point(40, 245);
+            lblApellido.Margin = new Padding(4, 0, 4, 0);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(58, 17);
+            lblApellido.Size = new Size(90, 26);
             lblApellido.TabIndex = 37;
             lblApellido.Text = "Apellido";
             // 
@@ -159,29 +165,32 @@
             // 
             txtNombre.BackColor = Color.White;
             txtNombre.ForeColor = Color.Black;
-            txtNombre.Location = new Point(165, 117);
+            txtNombre.Location = new Point(236, 195);
+            txtNombre.Margin = new Padding(4, 5, 4, 5);
             txtNombre.Name = "txtNombre";
             txtNombre.ReadOnly = true;
-            txtNombre.Size = new Size(238, 23);
+            txtNombre.Size = new Size(338, 31);
             txtNombre.TabIndex = 38;
             // 
             // txtApellido
             // 
             txtApellido.BackColor = Color.White;
             txtApellido.ForeColor = Color.Black;
-            txtApellido.Location = new Point(165, 146);
+            txtApellido.Location = new Point(236, 243);
+            txtApellido.Margin = new Padding(4, 5, 4, 5);
             txtApellido.Name = "txtApellido";
             txtApellido.ReadOnly = true;
-            txtApellido.Size = new Size(238, 23);
+            txtApellido.Size = new Size(338, 31);
             txtApellido.TabIndex = 39;
             // 
             // lblUltimoVencimiento
             // 
             lblUltimoVencimiento.AutoSize = true;
             lblUltimoVencimiento.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUltimoVencimiento.Location = new Point(28, 178);
+            lblUltimoVencimiento.Location = new Point(40, 297);
+            lblUltimoVencimiento.Margin = new Padding(4, 0, 4, 0);
             lblUltimoVencimiento.Name = "lblUltimoVencimiento";
-            lblUltimoVencimiento.Size = new Size(131, 17);
+            lblUltimoVencimiento.Size = new Size(201, 26);
             lblUltimoVencimiento.TabIndex = 40;
             lblUltimoVencimiento.Text = "Ultimo vencimiento";
             // 
@@ -189,9 +198,10 @@
             // 
             btnConfirmar.BackColor = Color.PaleGreen;
             btnConfirmar.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnConfirmar.Location = new Point(319, 375);
+            btnConfirmar.Location = new Point(456, 625);
+            btnConfirmar.Margin = new Padding(4, 5, 4, 5);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(164, 54);
+            btnConfirmar.Size = new Size(234, 90);
             btnConfirmar.TabIndex = 42;
             btnConfirmar.Text = "Pagar y Generar Comprobante";
             btnConfirmar.UseVisualStyleBackColor = false;
@@ -201,21 +211,24 @@
             // 
             btnCancelar.BackColor = Color.DarkSalmon;
             btnCancelar.Font = new Font("Arial", 11.25F, FontStyle.Bold);
-            btnCancelar.Location = new Point(165, 381);
+            btnCancelar.Location = new Point(236, 635);
+            btnCancelar.Margin = new Padding(4, 5, 4, 5);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(105, 42);
+            btnCancelar.Size = new Size(150, 70);
             btnCancelar.TabIndex = 42;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // txtUltimoVencimiento
             // 
             txtUltimoVencimiento.BackColor = Color.White;
             txtUltimoVencimiento.ForeColor = Color.Black;
-            txtUltimoVencimiento.Location = new Point(165, 177);
+            txtUltimoVencimiento.Location = new Point(236, 295);
+            txtUltimoVencimiento.Margin = new Padding(4, 5, 4, 5);
             txtUltimoVencimiento.Name = "txtUltimoVencimiento";
             txtUltimoVencimiento.ReadOnly = true;
-            txtUltimoVencimiento.Size = new Size(238, 23);
+            txtUltimoVencimiento.Size = new Size(338, 31);
             txtUltimoVencimiento.TabIndex = 43;
             // 
             // gbMetodoPago
@@ -223,9 +236,11 @@
             gbMetodoPago.Controls.Add(rbCredito);
             gbMetodoPago.Controls.Add(rbDebito);
             gbMetodoPago.Controls.Add(rbEfectivo);
-            gbMetodoPago.Location = new Point(28, 220);
+            gbMetodoPago.Location = new Point(40, 367);
+            gbMetodoPago.Margin = new Padding(4, 5, 4, 5);
             gbMetodoPago.Name = "gbMetodoPago";
-            gbMetodoPago.Size = new Size(110, 108);
+            gbMetodoPago.Padding = new Padding(4, 5, 4, 5);
+            gbMetodoPago.Size = new Size(157, 180);
             gbMetodoPago.TabIndex = 44;
             gbMetodoPago.TabStop = false;
             gbMetodoPago.Text = "Metodo de Pago";
@@ -233,9 +248,10 @@
             // rbCredito
             // 
             rbCredito.AutoSize = true;
-            rbCredito.Location = new Point(6, 72);
+            rbCredito.Location = new Point(9, 120);
+            rbCredito.Margin = new Padding(4, 5, 4, 5);
             rbCredito.Name = "rbCredito";
-            rbCredito.Size = new Size(64, 19);
+            rbCredito.Size = new Size(95, 29);
             rbCredito.TabIndex = 49;
             rbCredito.TabStop = true;
             rbCredito.Text = "Credito";
@@ -245,9 +261,10 @@
             // rbDebito
             // 
             rbDebito.AutoSize = true;
-            rbDebito.Location = new Point(6, 47);
+            rbDebito.Location = new Point(9, 78);
+            rbDebito.Margin = new Padding(4, 5, 4, 5);
             rbDebito.Name = "rbDebito";
-            rbDebito.Size = new Size(60, 19);
+            rbDebito.Size = new Size(91, 29);
             rbDebito.TabIndex = 48;
             rbDebito.TabStop = true;
             rbDebito.Text = "Debito";
@@ -256,9 +273,10 @@
             // rbEfectivo
             // 
             rbEfectivo.AutoSize = true;
-            rbEfectivo.Location = new Point(6, 22);
+            rbEfectivo.Location = new Point(9, 37);
+            rbEfectivo.Margin = new Padding(4, 5, 4, 5);
             rbEfectivo.Name = "rbEfectivo";
-            rbEfectivo.Size = new Size(67, 19);
+            rbEfectivo.Size = new Size(99, 29);
             rbEfectivo.TabIndex = 47;
             rbEfectivo.TabStop = true;
             rbEfectivo.Text = "Efectivo";
@@ -268,9 +286,10 @@
             // 
             lblMonto.AutoSize = true;
             lblMonto.Font = new Font("Arial", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMonto.Location = new Point(31, 344);
+            lblMonto.Location = new Point(44, 573);
+            lblMonto.Margin = new Padding(4, 0, 4, 0);
             lblMonto.Name = "lblMonto";
-            lblMonto.Size = new Size(51, 17);
+            lblMonto.Size = new Size(81, 26);
             lblMonto.TabIndex = 45;
             lblMonto.Text = "Monto:";
             // 
@@ -278,18 +297,20 @@
             // 
             txtImporteCuota.BackColor = Color.White;
             txtImporteCuota.ForeColor = Color.Black;
-            txtImporteCuota.Location = new Point(84, 344);
+            txtImporteCuota.Location = new Point(120, 573);
+            txtImporteCuota.Margin = new Padding(4, 5, 4, 5);
             txtImporteCuota.Name = "txtImporteCuota";
             txtImporteCuota.PlaceholderText = "Total a pagar";
-            txtImporteCuota.Size = new Size(127, 23);
+            txtImporteCuota.Size = new Size(180, 31);
             txtImporteCuota.TabIndex = 46;
             // 
             // rb6Cuotas
             // 
             rb6Cuotas.AutoSize = true;
-            rb6Cuotas.Location = new Point(6, 70);
+            rb6Cuotas.Location = new Point(9, 117);
+            rb6Cuotas.Margin = new Padding(4, 5, 4, 5);
             rb6Cuotas.Name = "rb6Cuotas";
-            rb6Cuotas.Size = new Size(71, 19);
+            rb6Cuotas.Size = new Size(107, 29);
             rb6Cuotas.TabIndex = 55;
             rb6Cuotas.TabStop = true;
             rb6Cuotas.Text = "6 Cuotas";
@@ -298,9 +319,10 @@
             // rb3Cuotas
             // 
             rb3Cuotas.AutoSize = true;
-            rb3Cuotas.Location = new Point(6, 45);
+            rb3Cuotas.Location = new Point(9, 75);
+            rb3Cuotas.Margin = new Padding(4, 5, 4, 5);
             rb3Cuotas.Name = "rb3Cuotas";
-            rb3Cuotas.Size = new Size(71, 19);
+            rb3Cuotas.Size = new Size(107, 29);
             rb3Cuotas.TabIndex = 54;
             rb3Cuotas.TabStop = true;
             rb3Cuotas.Text = "3 Cuotas";
@@ -309,9 +331,10 @@
             // rb1Cuota
             // 
             rb1Cuota.AutoSize = true;
-            rb1Cuota.Location = new Point(6, 20);
+            rb1Cuota.Location = new Point(9, 33);
+            rb1Cuota.Margin = new Padding(4, 5, 4, 5);
             rb1Cuota.Name = "rb1Cuota";
-            rb1Cuota.Size = new Size(66, 19);
+            rb1Cuota.Size = new Size(99, 29);
             rb1Cuota.TabIndex = 53;
             rb1Cuota.TabStop = true;
             rb1Cuota.Text = "1 Cuota";
@@ -322,19 +345,21 @@
             gbCuotas.Controls.Add(rb3Cuotas);
             gbCuotas.Controls.Add(rb6Cuotas);
             gbCuotas.Controls.Add(rb1Cuota);
-            gbCuotas.Location = new Point(149, 222);
+            gbCuotas.Location = new Point(213, 370);
+            gbCuotas.Margin = new Padding(4, 5, 4, 5);
             gbCuotas.Name = "gbCuotas";
-            gbCuotas.Size = new Size(92, 106);
+            gbCuotas.Padding = new Padding(4, 5, 4, 5);
+            gbCuotas.Size = new Size(131, 177);
             gbCuotas.TabIndex = 56;
             gbCuotas.TabStop = false;
             gbCuotas.Text = "Cuotas";
             // 
             // FormPagarCuota
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(504, 435);
+            ClientSize = new Size(720, 725);
             Controls.Add(gbCuotas);
             Controls.Add(txtImporteCuota);
             Controls.Add(lblMonto);
@@ -355,7 +380,6 @@
             Controls.Add(lblCheckDocumento);
             Controls.Add(btnBuscar);
             Controls.Add(lblPagarCuota);
-            Margin = new Padding(2);
             Name = "FormPagarCuota";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Pagar Cuota";
