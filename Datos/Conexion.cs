@@ -64,7 +64,7 @@ namespace clubDeportivo.Datos
 
             // reemplazamos los datos concretos que teniamos por las variables
 
-            this.baseDatos = "Proyecto";
+            this.baseDatos = "ComC_Grupo18";
             this.servidor = T_servidor; // "localhost";
             this.puerto = T_puerto; // "3306";
             this.usuario = T_usuario; // "root";

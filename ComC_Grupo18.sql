@@ -1,9 +1,9 @@
-CREATE DATABASE  IF NOT EXISTS `proyecto` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `proyecto`;
+CREATE DATABASE  IF NOT EXISTS `ComC_Grupo18` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `ComC_Grupo18`;
 
 -- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
--- Host: localhost    Database: proyecto
+-- Host: localhost    Database: ComC_Grupo18
 -- ------------------------------------------------------
 -- Server version	8.0.42
 
@@ -247,11 +247,11 @@ INSERT INTO `usuario` VALUES (26,'Mari2023','123456',120,1);
 UNLOCK TABLES;
 
 --
--- Dumping events for database 'proyecto'
+-- Dumping events for database 'ComC_Grupo18'
 --
 
 --
--- Dumping routines for database 'proyecto'
+-- Dumping routines for database 'ComC_Grupo18'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `IngresoLogin` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
